@@ -3,8 +3,8 @@ const app = express();
 const allroutes = require("./routes/routes");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const env = require("dotenv").config();
 let port = 5000;
-
 let StartServer = async () => {
   app.use("/vrpuram", allroutes);
 
@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //db connection start
 let dbconnection = async () => {
   await mongoose.connect("mongodb://localhost:27017/vrpuram");
+  // await mongoose.connect(env.parsed.dburl)
   console.log("database is connected");
 };
 dbconnection();
