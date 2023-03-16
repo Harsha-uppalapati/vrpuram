@@ -1,5 +1,5 @@
 const { model, Schema } = require("mongoose");
-const vrpuramSchema = new Schema(
+const roomb = new Schema(
   {
     firstName: { type: String },
     lastName: { type: String },
@@ -9,4 +9,4 @@ const vrpuramSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("vrpuram", vrpuramSchema);
+module.exports = model("roombook", roomb);

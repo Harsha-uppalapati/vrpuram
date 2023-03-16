@@ -4,8 +4,13 @@ module.exports = {
     body: Joi.object({
       firstName: Joi.string().required(),
       lastName: Joi.string().required(),
-      amount: Joi.number().optional(),
+      amount: Joi.number().required(),
       mobileNo: Joi.number().optional(),
+    }),
+  },
+  calculateAmount: {
+    query: Joi.object({
+      firstName: Joi.string().required(),
     }),
   },
 };
