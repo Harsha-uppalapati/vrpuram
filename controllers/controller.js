@@ -7,7 +7,7 @@ exports.check = async (req, res) => {
 exports.creatUser = async (req, res) => {
   try {
     let { error } = validateSchema.creatUser.body.validate(req.body);
-    let roommates = ["harsha", "subbamma", "kiran", "sathya", "ganesh"];
+    let roommates = ["harsha", "subbu", "kiran", "sathya", "ganesh"];
     let person = roommates.find(
       a => a == req.body.firstName.toLocaleLowerCase()
     );
@@ -55,7 +55,8 @@ exports.calculate = async (req, res) => {
       let amount = data.map(a => a.amount).reduce((a, b) => a + b);
       res.send({
         message: "sucess",
-        total: amount,
+        totalAmount: amount,
+        totaData: data,
       });
     } else {
       res.send({
